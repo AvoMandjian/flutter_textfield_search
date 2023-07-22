@@ -113,8 +113,7 @@ class _TextFieldSearchState extends State<TextFieldSearch> {
           // lowercase the item and see if the item contains the string of text from the lowercase search
           if (widget.getSelectedValue != null) {
             if (this
-                .filteredList![i]
-                .label
+                .filteredList![i]['label']
                 .toLowerCase()
                 .contains(widget.controller.text.toLowerCase())) {
               // if there is a match, add to the temp list
@@ -150,7 +149,7 @@ class _TextFieldSearchState extends State<TextFieldSearch> {
     for (int i = 0; i < filteredList!.length; i++) {
       // lowercase the item and see if the item contains the string of text from the lowercase search
       if (this
-          .filteredList![i]
+          .filteredList![i]['label']
           .toLowerCase()
           .contains(widget.controller.text.toLowerCase())) {
         // if there is a match, add to the temp list
@@ -199,7 +198,7 @@ class _TextFieldSearchState extends State<TextFieldSearch> {
           if (widget.getSelectedValue != null) {
             // try to match the label against what is set on controller
             textMatchesItem = filteredList!
-                .any((item) => item.label == widget.controller.text);
+                .any((item) => item['label'] == widget.controller.text);
           } else {
             textMatchesItem = filteredList!.contains(widget.controller.text);
           }
@@ -255,7 +254,7 @@ class _TextFieldSearchState extends State<TextFieldSearch> {
                 // if we have a label property, and getSelectedValue function
                 // send getSelectedValue to parent widget using the label property
                 if (widget.getSelectedValue != null) {
-                  widget.controller.text = filteredList![i].label;
+                  widget.controller.text = filteredList![i]['label'];
                   widget.getSelectedValue!(filteredList![i]);
                 } else {
                   widget.controller.text = filteredList![i];
@@ -268,7 +267,7 @@ class _TextFieldSearchState extends State<TextFieldSearch> {
             },
             child: ListTile(
                 title: widget.getSelectedValue != null
-                    ? Text(filteredList![i].label)
+                    ? Text(filteredList![i]['label'])
                     : Text(filteredList![i])));
       },
       padding: EdgeInsets.zero,
