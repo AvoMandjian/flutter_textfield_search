@@ -13,6 +13,7 @@ void main() {
     await tester.pumpWidget(MaterialApp(
       home: Scaffold(
           body: TextFieldSearch(
+        focusNode: FocusNode(),
         key: testKey,
         initialList: dummyList,
         label: label,
@@ -116,6 +117,7 @@ void main() {
     await tester.pumpWidget(MaterialApp(
       home: Scaffold(
           body: TextFieldSearch(
+        focusNode: FocusNode(),
         key: testKey,
         label: label,
         controller: myController,
@@ -168,6 +170,7 @@ void main() {
     await tester.pumpWidget(MaterialApp(
       home: Scaffold(
           body: TextFieldSearch(
+        focusNode: FocusNode(),
         key: testKey,
         label: label,
         controller: myController,
@@ -233,6 +236,7 @@ void main() {
     await tester.pumpWidget(MaterialApp(
       home: Scaffold(
           body: TextFieldSearch(
+        focusNode: FocusNode(),
         key: testKey,
         label: label,
         controller: myController,
@@ -286,6 +290,7 @@ void main() {
     await tester.pumpWidget(MaterialApp(
       home: Scaffold(
           body: TextFieldSearch(
+        focusNode: FocusNode(),
         key: testKey,
         initialList: dummyList,
         label: label,
@@ -322,6 +327,7 @@ void main() {
     await tester.pumpWidget(MaterialApp(
       home: Scaffold(
           body: TextFieldSearch(
+        focusNode: FocusNode(),
         key: testKey,
         initialList: dummyList,
         label: label,
@@ -376,6 +382,7 @@ void main() {
     await tester.pumpWidget(MaterialApp(
       home: Scaffold(
           body: TextFieldSearch(
+        focusNode: FocusNode(),
         key: testKey,
         label: label,
         controller: myController,
@@ -428,12 +435,13 @@ void main() {
     await tester.pumpWidget(MaterialApp(
       home: Scaffold(
           body: TextFieldSearch(
+        focusNode: FocusNode(),
         key: testKey,
         label: label,
         scrollbarDecoration: ScrollbarDecoration(
             controller: ScrollController(),
             theme: ScrollbarThemeData(
-                isAlwaysShown: true,
+                thumbVisibility: true,
                 thickness: MaterialStateProperty.all(10.0))),
         controller: myController,
         future: () {
@@ -484,12 +492,13 @@ void main() {
     await tester.pumpWidget(MaterialApp(
       home: Scaffold(
           body: TextFieldSearch(
+        focusNode: FocusNode(),
         key: testKey,
         label: label,
         scrollbarDecoration: ScrollbarDecoration(
             controller: ScrollController(),
             theme: ScrollbarThemeData(
-                isAlwaysShown: true,
+                thumbVisibility: true,
                 thickness: MaterialStateProperty.all(10.0))),
         controller: myController,
         future: () {
@@ -539,12 +548,13 @@ void main() {
     await tester.pumpWidget(MaterialApp(
       home: Scaffold(
           body: TextFieldSearch(
+        focusNode: FocusNode(),
         key: testKey,
         label: label,
         scrollbarDecoration: ScrollbarDecoration(
             controller: ScrollController(),
             theme: ScrollbarThemeData(
-                isAlwaysShown: true,
+                thumbVisibility: true,
                 thickness: MaterialStateProperty.all(10.0))),
         itemsInView: 5,
         controller: myController,
@@ -593,12 +603,13 @@ void main() {
     await tester.pumpWidget(MaterialApp(
       home: Scaffold(
           body: TextFieldSearch(
+        focusNode: FocusNode(),
         key: testKey,
         label: label,
         scrollbarDecoration: ScrollbarDecoration(
             controller: ScrollController(),
             theme: ScrollbarThemeData(
-                isAlwaysShown: true,
+                thumbVisibility: true,
                 thickness: MaterialStateProperty.all(10.0))),
         controller: myController,
         future: () {
@@ -647,12 +658,13 @@ void main() {
     await tester.pumpWidget(MaterialApp(
       home: Scaffold(
           body: TextFieldSearch(
+        focusNode: FocusNode(),
         key: testKey,
         label: label,
         scrollbarDecoration: ScrollbarDecoration(
             controller: ScrollController(),
             theme: ScrollbarThemeData(
-                isAlwaysShown: true,
+                thumbVisibility: true,
                 thickness: MaterialStateProperty.all(10.0))),
         decoration: InputDecoration(hintText: hintText),
         controller: myController,

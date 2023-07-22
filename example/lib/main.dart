@@ -117,6 +117,7 @@ class _MyHomePageState extends State<MyHomePage> {
             children: <Widget>[
               SizedBox(height: 16),
               TextFieldSearch(
+                  focusNode: FocusNode(),
                   label: 'Simple Future List',
                   controller: myController2,
                   future: () {
@@ -124,6 +125,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   }),
               SizedBox(height: 16),
               TextFieldSearch(
+                focusNode: FocusNode(),
                 label: 'Complex Future List',
                 controller: myController3,
                 future: () {
@@ -138,6 +140,7 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
               SizedBox(height: 16),
               TextFieldSearch(
+                  focusNode: FocusNode(),
                   label: 'Future List with custom scrollbar theme',
                   controller: myController4,
                   scrollbarDecoration: ScrollbarDecoration(
@@ -145,13 +148,14 @@ class _MyHomePageState extends State<MyHomePage> {
                       theme: ScrollbarThemeData(
                           radius: Radius.circular(30.0),
                           thickness: MaterialStateProperty.all(20.0),
-                          isAlwaysShown: true,
+                          thumbVisibility: true,
                           trackColor: MaterialStateProperty.all(Colors.red))),
                   future: () {
                     return fetchSimpleData();
                   }),
               SizedBox(height: 16),
               TextFieldSearch(
+                  focusNode: FocusNode(),
                   initialList: _testList,
                   label: 'Simple List',
                   controller: myController),

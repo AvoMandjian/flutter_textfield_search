@@ -32,11 +32,14 @@ class TextFieldSearch extends StatefulWidget {
   /// The number of matched items that are viewable in results
   final int itemsInView;
 
+  final FocusNode focusNode;
+
   /// Creates a TextFieldSearch for displaying selected elements and retrieving a selected element
   const TextFieldSearch(
       {Key? key,
       this.initialList,
       required this.label,
+      required this.focusNode,
       required this.controller,
       this.textStyle,
       this.future,
@@ -52,7 +55,6 @@ class TextFieldSearch extends StatefulWidget {
 }
 
 class _TextFieldSearchState extends State<TextFieldSearch> {
-  final FocusNode _focusNode = FocusNode();
   late OverlayEntry _overlayEntry;
   final LayerLink _layerLink = LayerLink();
   List? filteredList = <dynamic>[];
@@ -177,10 +179,10 @@ class _TextFieldSearchState extends State<TextFieldSearch> {
     }
     // add event listener to the focus node and only give an overlay if an entry
     // has focus and insert the overlay into Overlay context otherwise remove it
-    _focusNode.addListener(() {
-      if (_focusNode.hasFocus) {
+    widget.focusNode.addListener(() {
+      if (widget.focusNode.hasFocus) {
         this._overlayEntry = this._createOverlayEntry();
-        Overlay.of(context)!.insert(this._overlayEntry);
+        Overlay.of(context).insert(this._overlayEntry);
       } else {
         this._overlayEntry.remove();
         // check to see if itemsFound is false, if it is clear the input
@@ -361,7 +363,7 @@ class _TextFieldSearchState extends State<TextFieldSearch> {
       link: this._layerLink,
       child: TextField(
         controller: widget.controller,
-        focusNode: this._focusNode,
+        focusNode: widget.focusNode,
         decoration: widget.decoration != null
             ? widget.decoration
             : InputDecoration(labelText: widget.label),
